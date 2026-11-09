@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ya Ayyuhal Lazeena Amanu — Quran Ayaat</title>
+  <meta name="description" content="All ayaat of the Quran beginning with 'Ya ayyuhal lazeena amanu' with word-by-word meaning and translations in Urdu, Hinglish and many other languages.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Scheherazade+New:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="hero-arabic" lang="ar" dir="rtl">يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟</p>
+    <h1>Ya Ayyuhal Lazeena Amanu</h1>
+    <p class="hero-sub">"O you who have believed" — <span id="count">…</span> ayaat of the Quran with word-by-word meaning and translations</p>
+  </header>
+
+  <main class="container">
+    <section class="card controls" aria-label="Choose ayah">
+      <label class="field-label" for="search">Search</label>
+      <input id="search" type="search" placeholder="Filter by surah name, number (e.g. 2:153) or meaning…" autocomplete="off">
+
+      <label class="field-label" for="ayah-select">Select ayah</label>
+      <div class="select-row">
+        <button id="prev" class="nav-btn" type="button" aria-label="Previous ayah">&larr;</button>
+        <select id="ayah-select"></select>
+        <button id="next" class="nav-btn" type="button" aria-label="Next ayah">&rarr;</button>
+      </div>
+
+      <details class="lang-panel" open>
+        <summary>Languages</summary>
+        <div class="lang-group">
+          <span class="field-label">Translation</span>
+          <div id="tr-langs" class="chips" role="group" aria-label="Translation languages"></div>
+        </div>
+        <div class="lang-group">
+          <span class="field-label">Word-by-word meaning</span>
+          <div id="wbw-langs" class="chips" role="group" aria-label="Word-by-word languages"></div>
+        </div>
+      </details>
+    </section>
+
+    <article id="ayah" class="card ayah" aria-live="polite">
+      <p class="loading">Loading…</p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    Quran text, translations and word-by-word data from
+    <a href="https://quran.com" target="_blank" rel="noopener">Quran.com</a> (API v4).
+    Hinglish word-by-word meanings are auto-transliterated from the Hindi word-by-word data.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
