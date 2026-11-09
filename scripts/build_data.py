@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Fetch every ayah containing "يا أيها الذين آمنوا" with translations and
 word-by-word meanings, and write static JSON files into ./data."""
+import html
 import json
 import re
 import urllib.request
@@ -63,7 +64,7 @@ def get(url):
 def clean(text):
     text = re.sub(r"<sup[^>]*>.*?</sup>", "", text or "")
     text = re.sub(r"<[^>]+>", "", text)
-    return re.sub(r"\s+", " ", text).strip()
+    return re.sub(r"\s+", " ", html.unescape(text)).strip()
 
 
 def find_verse_keys():
