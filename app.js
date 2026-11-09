@@ -21,6 +21,9 @@
       cache.set(path, fetch(path).then((r) => {
         if (!r.ok) throw new Error(`Failed to load ${path}`);
         return r.json();
+      }).catch((err) => {
+        cache.delete(path);
+        throw err;
       }));
     }
     return cache.get(path);
