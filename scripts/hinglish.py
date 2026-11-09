@@ -1,5 +1,7 @@
 """Minimal Devanagari -> Hinglish (casual Roman script) transliteration."""
 
+import unicodedata
+
 CONSONANTS = {
     "क": "k", "ख": "kh", "ग": "g", "घ": "gh", "ङ": "n",
     "च": "ch", "छ": "chh", "ज": "j", "झ": "jh", "ञ": "n",
@@ -86,6 +88,7 @@ def _transliterate_word(word):
 
 
 def devanagari_to_hinglish(text):
+    text = unicodedata.normalize("NFD", text)
     out, word = [], []
     for ch in text:
         if "\u0900" <= ch <= "\u097f" and ch not in "।॥":
